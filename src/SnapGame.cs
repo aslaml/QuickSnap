@@ -27,7 +27,8 @@ namespace CardGames
 				myGame.FlipNextCard ();
 			}
 			if (myGame.IsStarted)
-{
+		{
+			//adding if statement 
 if ( SwinGame.KeyTyped (KeyCode.vk_LSHIFT) &&
 SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
 {
