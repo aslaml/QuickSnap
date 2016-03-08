@@ -26,26 +26,6 @@ namespace CardGames
 			{
 				myGame.Start ();
 			}
-			if (myGame.IsStarted)
-		{
-			//adding if statement 
-if ( SwinGame.KeyTyped (KeyCode.vk_LSHIFT) &&
-SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
-{
-//TODO: add sound effects
-}
-else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT))
-{
-myGame.PlayerHit (0);
-}
-else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
-{
-myGame.PlayerHit (1);
-}
-}
-			
-			
-			
 		}
 
 		/// <summary>
@@ -54,7 +34,7 @@ myGame.PlayerHit (1);
 		/// <param name="myGame">The details of the game -- mostly top card and scores.</param>
 		private static void DrawGame(Snap myGame)
 		{
-			SwinGame.DrawBitmap("cardsBoard.png", 0, 0);
+			SwinGame.ClearScreen(Color.White);
 
 			// Draw the top card
 			Card top = myGame.TopCard;
@@ -86,6 +66,11 @@ myGame.PlayerHit (1);
 			myGame.Update(); // just ask the game to do this...
 		}
 
+		private static void ShuffleGame(Snap myGame)
+		{
+			myGame.Shuffle(); // just ask the game to do this...
+		}
+		
         public static void Main()
         {
             //Open the game window
@@ -103,6 +88,7 @@ myGame.PlayerHit (1);
 				HandleUserInput (myGame);
 				DrawGame (myGame);
 				UpdateGame (myGame);
+				ShuffleGame (myGame);
             }
         }
     }
