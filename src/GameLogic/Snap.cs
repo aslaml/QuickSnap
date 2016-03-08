@@ -151,7 +151,12 @@ namespace CardGames.GameLogic
 			_started = false;
 			_gameTimer.Stop ();
 		}
-	
+	//adding changes here
+	else if ( player >= 0 && player < _score.Length)
+{
+_score[player]--;
+}
+
 		#region Snap Game Unit Tests
 		#if DEBUG
 
